@@ -1,6 +1,5 @@
 'use client'
-import { redirect } from "next/navigation"
-import { addProduct } from "../prisma-db"
+
 import Submit from "../components/submit"
 import { formData } from "@/actions/action"
 import { useActionState } from "react"

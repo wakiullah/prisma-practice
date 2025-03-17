@@ -3,9 +3,9 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 const seedProducts = async () => {
-    const data = await prisma.product.count()
+    const data = await prisma.product.findMany()
 
-    if (data === 0) {
+    if (data.length === 0) {
         await prisma.product.createMany({
             data: [
                 { title: 'Product No 1', price: 300, description: 'This is description of Product 1' },

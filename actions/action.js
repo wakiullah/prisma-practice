@@ -8,7 +8,6 @@ export async function formData(prevState, formData) {
     const title = formData.get('title')
     const description = formData.get('description')
     const price = formData.get('price')
-    console.log(title, description, price);
 
     const error = {}
 
@@ -26,7 +25,7 @@ export async function formData(prevState, formData) {
         return { error };
     }
 
-    await addProduct(title, parseInt(price), description)
+    await addProduct(title, price, description)
     redirect('/fetchdb')
     // console.log(title, desc  ription, price);
 
